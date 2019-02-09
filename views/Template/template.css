@@ -1,0 +1,129 @@
+.button {
+    background-color: rgb(33, 122, 224);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    border: 2px solid rgb(33, 122, 224);
+    /* padding: 16px 32px; */
+    height: 50px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /* margin-left: 100; */
+    cursor: pointer;
+}
+
+.button1:hover {
+    
+    background-color: rgb(255, 255, 255);
+    color: rgb(43, 45, 49);
+}
+
+.button2 {
+    background-color: rgb(255, 255, 255);
+    color: rgb(43, 45, 49);
+    border: none;
+    border-radius: 4px;
+    border: 2px solid rgb(33, 122, 224);
+    /* padding: 16px 32px; */
+    height: 50px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: rgb(33, 122, 224);
+    color: white;
+}
+
+.headerTitle {
+    text-align: center;
+    color: rgb(29, 30, 37);
+}
+
+.bgColor {
+    background-color: rgb(235, 235, 235);
+}
+
+
+.bg {
+    background-color: rgb(231, 231, 231);
+}
+
+.bgTabel {
+    background-color: white;
+    border-radius: 6px;
+}
+.image {
+    border: none;
+    width: 350;
+    height: 667;
+    background-color: white;
+    border-radius: 6;
+}
+
+.textTabel {
+    color: rgb(32, 151, 255);
+    font-size: 36;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid green; */
+    /* padding: 10px; */
+  }
+
+.textTabelRed {
+    color: rgb(255, 43, 36);
+    font-size: 36;
+}
+
+.margin {
+    margin-top: 100px;
+}
+
+
+
+.bigTable {
+      width: 100%;
+  }
+
+.item {
+    width: 180px;
+    height: 180px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(25, 209, 108);
+    font-size: 36px;
+    margin: 5px;
+}
+
+.itemHover:hover {
+    background-color: rgb(90, 231, 154);
+}
+
+.itemSelect {
+    width: 180px;
+    height: 180px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(255, 91, 50);
+    font-size: 36px;
+    margin: 5px;
+}
+
+.itemSelectHover:hover {
+    background-color: rgb(209, 90, 61);
+}
+
+.fontGreen {
+    color: rgb(34, 248, 34);
+}

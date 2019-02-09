@@ -1,0 +1,61 @@
+{{define "list"}}
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="/template.css">
+    <script src="main.js"></script>
+</head>
+<style>
+    input[type=text] {
+  width: 200px;
+  height: 50px;
+  /* padding: 12px 20px; */
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  font-size: 25px;
+  text-align: center; 
+}
+.h3Green {
+  color: rgb(82, 160, 17);
+}
+
+.h3Red {
+    color: rgb(219, 43, 31);
+}
+</style>
+<body bgcolor="#f4f4f4">      
+        <th>
+                <form action="/list">
+                       <input type="submit" value="ดูบันทึกทั้งหมด" class="button button1">
+               </form>
+                       
+            </th>  
+    <table class="center" style="width:300px">
+        <form action="/list/id/">
+            <th><input type="text" placeholder="room id" name="id"></th>
+            <th><input type="submit" value="Serach" class="button"></th>
+        </form>
+    </table>
+    <table style="width:85%" class="bgTabel center margin">
+        {{range .ModelLogs}}
+        <tr>
+            <th><h3 class="{{if .Empty }} h3Green {{else}} h3Red {{end}}">ห้อง {{.Room_ID}}</h3></th>
+            <th><h4 class="{{if .Empty }} h3Green {{else}} h3Red {{end}}">สถานะ: {{.Status}}</th>
+            <th><h4>ชื่อ {{.Name}}</h4></th>
+            <th><h4>เวลาเข้า {{.Check_InStr}}</h4></th>
+            <th><h4>เวลาออก {{.Check_Out}}</h4></th>
+
+            
+        </tr>
+        {{end}}
+        
+    </table>
+        </body>
+</html>
+{{end}}
+
