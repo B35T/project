@@ -8,51 +8,96 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="/template.css">
     <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 </head>
-<body class=".bg">
-        <table class="center" style="width:200px"><th><img src="/img.png" width="100" height="150" ></th></table>
-                
-                <h1 class="headerTitle center">{{.PageTitle}}<h1>
-                
-                <table class="center" style="width:200px">
-                        <th>
-                                 <form action="/">
-                                        <input type="submit" value="สถานะ" class="button button1">
-                                </form>
-                                        
-                        </th>
-                        <th>
-                                <form action="/list">
-                                          <input type="submit" value="ดูบันทึก" class="button button2">
-                                </form>
-                        </th>
-                </table>
-                <h1 class="headerTitle center">บ้านพักรับรอง<h1></h1>
-                <table class="bigTable center">
-                        <th>
-                                {{range .Model}}
-                                {{if .VIP}} 
-                                <form action="{{if .Empty}}/in/{{ else }}/out/{{end}}{{.Room_ID}}"><tr><input type="submit" value="{{.Room_ID}}" class="{{if .Empty}} item itemHover {{ else }} itemSelect itemSelectHover {{end}}"></tr></form>                                
-                                {{end}} 
-                                
-                                {{end}}
-                                
-                        </th>
-                </table>
 
-                <h1 class="headerTitle center">เรือนรับรอง<h1></h1>
-                <table class="bigTable center">
-                                <th>
+<style>
+        h1 {
+                font-family: 'Charm', cursive;
+                font-size: 45px;
+        }
+
+        h2 {
+                font-family: 'Kanit', sans-serif;
+                font-size: 36px;
+        }
+        
+        .modern {
+                font-family: 'Kanit', sans-serif;
+                font-size: 18px;
+        }
+</style>
+<body class="background-image">
+        <table class="right" style="width:200px">
+                <th><form action="/"><input type="submit" value="สถานะ" class="button button1 modern"></form></th>
+                <th><form action="/list"><input type="submit" value="ดูบันทึก" class="button button2 modern"></form></th>
+        </table>
+        <table class="center" style="width:50%">
+                <th style="width: 5%"><img src="/img.jpg" width="100" height="150" ></th>
+                <th style="width: 40%"><h1 style="text-align: center; color:white" class="headerTitle">{{.PageTitle}}</h1></th>
+        </table>
+
+
+        <table style="height:50px"></table>
+        <table class="background-color center w90">
+                <th style="width:300px"><h2 class="headerTitle ">บ้านพักรับรอง</h2></th>
+                <th><table class="bigTable">
+                        <table>
                                         {{range .Model}}
-                                        {{if .VIP}} 
-                                        {{else}}
-                                                <form action="{{if .Empty}}/in/{{ else }}/out/{{end}}{{.Room_ID}}"><tr><input type="submit" value="ห้อง {{.Room_ID}}" class="{{if .Empty}} item itemHover {{ else }} itemSelect itemSelectHover {{end}}"></tr></form>                          
-                                        {{end}} 
-                                        
+                                        {{if .HOME}} 
+                                        <th>
+                                        {{if .Diamond}}
+                                        <form action="{{if .Empty}}/in/{{ else }}/out/{{end}}{{.Room_ID}}"><input type="submit" value="{{.Room_ID}}" class="{{if .Empty}} diamond diamondHover {{ else }} itemSelect itemSelectHover {{end}}"></form>
                                         {{end}}
-                                        
-                                </th>
+                                        {{if .Gold}}
+                                        <form action="{{if .Empty}}/in/{{ else }}/out/{{end}}{{.Room_ID}}"><input type="submit" value="{{.Room_ID}}" class="{{if .Empty}} gold goldHover {{ else }} itemSelect itemSelectHover {{end}}"></form>
+                                        {{end}}
+                                        {{if .Silver}}
+                                        <form action="{{if .Empty}}/in/{{ else }}/out/{{end}}{{.Room_ID}}"><input type="submit" value="{{.Room_ID}}" class="{{if .Empty}} silver silverHover {{ else }} itemSelect itemSelectHover {{end}}"></form>
+                                        {{end}}
+                                        <!-- <form action="{{if .Empty}}/in/{{ else }}/out/{{end}}{{.Room_ID}}"><input type="submit" value="{{.Room_ID}}" class="{{if .Empty}} item itemHover {{ else }} itemSelect itemSelectHover {{end}}"></form>                                   -->
+                                        </th>
+                                        {{end}}  
+                                        {{end}}
                         </table>
+                                
+                </table></th>
+        </table>
+        
+        <table style="height:50px"></table>
+        <table class="background-color center w90">
+                <th style="width:300px"><h2 class="headerTitle ">เรือนรับรอง</h2></th>
+                <th><table class="bigTable">
+                        <tr>
+                                <table>
+                                        {{ range .Model}}
+                                        {{if .VIP}}
+                                        <th>
+                                        <form action="{{if .Empty}}/in/{{ else }}/out/{{end}}{{.Room_ID}}"><input type="submit" value="ห้อง {{.Room_ID}}" class="{{if .Empty}} vip vipHover {{ else }} itemSelect itemSelectHover {{end}}"></form>               
+                                        </th>
+                                        {{else}}{{end}}{{end}}
+                                                
+                                </table>
+                                <table> 
+                                                {{ range .Model}}
+                                                {{if .VIP}}
+                                                
+                                                {{else}}
+                                                {{if .HOME}}
+                                                {{else}}
+                                                <th>
+                                                <form action="{{if .Empty}}/in/{{ else }}/out/{{end}}{{.Room_ID}}"><input type="submit" value="ห้อง {{.Room_ID}}" class="{{if .Empty}} item itemHover {{ else }} itemSelect itemSelectHover {{end}}"></form>
+                                                </th>
+                                                {{end}}
+                                                {{end}}
+                                                {{end}}
+                                </table>
+                        </tr>
+                </table>
+                        
+                </th>
+        </table>    
         </body>
 </html>
 

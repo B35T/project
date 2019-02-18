@@ -6,19 +6,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" media="screen" href="/template.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <script src="main.js"></script>
 </head>
-<body class="bg">
+<style>
+                h1 {
+                        font-family: 'Kanit', sans-serif;
+                        font-size: 36px;
+                }
+        
+                .Kanit {
+                        font-family: 'Kanit', sans-serif;
+                        font-size: 24px;
+                }
+        
+        </style>
+<body class="background-image">
          <th>
                 <form action="/">
-                        <input type="submit" value="หน้าแรก" class="button button1">
+                        <input type="submit" value="หน้าแรก" class="button button1 Kanit">
                 </form>                   
         </th> 
         <form action="/checkout/{{.ID}}" method="POST">
                 <table style="width:300px" class="bgTabel center">
                         <tr style="height:120px"><th class="textTabelRed"><h1>CHECK-OUT</h1></th></tr>
                         <tr style="height:120px"> <th class="textTabelRed"><h1>ห้อง {{.ID}}</h1></th></tr>
-                        <tr style="height:120px"><th><input type="submit" class="button button1" value="ยืนยัน"></th></tr>
+                        <tr style="height:120px"><th><input type="submit" class="button button1 Kanit" value="ยืนยัน"></th></tr>
                 </table>
         </form>
     </body>
